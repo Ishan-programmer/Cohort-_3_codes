@@ -1,0 +1,30 @@
+<html>
+
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">Add Todo</button>
+</body>
+
+<script>
+    let counter = 1
+    function delTask(index){
+        let taskRemove = document.getElementById(index)
+        taskRemove.parentNode.removeChild(taskRemove)        
+    }
+    function addTodo() {
+        let inputValue = document.querySelector("input").value
+
+        let newTask = document.createElement("div")
+        newTask.setAttribute("id",counter)
+        newTask.innerHTML = "<div>" + inputValue +"</div> <button onclick='delTask("+ counter+ ")'>Delete</button>"
+        
+        document.querySelector("body").appendChild(newTask)
+        counter++
+    }
+    // function delTask(){
+    //     let task = document.querySelector("del")
+    //     task.parentNode.removeChild(task)
+    // }
+</script>
+
+</html>
