@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <input type="text">
+        <button onclick="addTodo()">Add todo</button>
+    </body>
+
+    <script>
+        let ctr = 1
+        function deleteTask(index){
+            let del = document.getElementById("task-"+index)
+            del.parentElement.removeChild(del)
+        }
+        function addTodo(){
+            // taking the text from input
+            let inputText = document.querySelector("input").value
+
+            // create new div and adding inpuText to it
+            let newDiv = document.createElement("div")
+            document.querySelector("body").appendChild(newDiv)
+            newDiv.setAttribute("id", "task-"+ctr)
+
+            // uses html code is JS which is a bad idea
+            // newDiv.innerHTML = `<div>${inputText}</div> <button id=${ctr} onclick="deleteTask(${ctr})">Delete task</button>`
+
+            // another way is to create seperate div and button and then append it to newDiv
+            let taskDiv = document.createElement("div")
+            taskDiv.textContent = inputText
+            let delBtn = document.createElement("button")
+            delBtn.setAttribute("onclick", deleteTask(ctr))
+            delBtn.setAttribute("id", ctr)
+            delBtn.innerHTML = "Delete Task"
+            
+            newDiv.appendChild(taskDiv)
+            newDiv.appendChild(delBtn)       
+            
+            ctr++
+        }
+        
+    </script>
+</html>
