@@ -1,0 +1,3 @@
+hello duniya, I am a txt file for assignment 1
+This is the first assignment of NodeJS
+Will make projects on it further
