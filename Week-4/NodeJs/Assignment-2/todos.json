@@ -3,10 +3,5 @@
     "id": 1,
     "task": "sleep",
     "completed": true
-  },
-  {
-    "id": 3,
-    "task": "cohort-3-coding",
-    "completed": false
   }
 ]
